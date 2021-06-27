@@ -1,14 +1,14 @@
-# fluiddpi
+# VCoreOS
 
-A pi image with Klipper, Moonraker and Fluidd pre-installed.
+A pi image based on FluiddPi with Klipper, Moonraker and Fluidd pre-installed.
 
 This repository contains the necessary code to generate the distribution from an existing Raspbian lite distro image.
 
 ## Where to download?
 
-You can download the latest release [here](https://github.com/cadriel/FluiddPI/releases/latest).
+You can download the latest release [here](https://github.com/Rat-Rig/V-CoreOS/releases/latest).
 
-Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases).
+Older releases can be found [here](https://github.com/Rat-Rig/V-CoreOS/releases).
 
 ## How to use?
 

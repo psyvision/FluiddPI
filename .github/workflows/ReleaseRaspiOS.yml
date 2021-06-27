@@ -1,4 +1,4 @@
-name: Build and Release FluiddPI - RapsiOS
+name: Build and Release VCoreOS - RapsiOS
 on:
   release:
     types: [ published ]
@@ -17,7 +17,7 @@ jobs:
           repository: 'guysoft/CustomPiOS'
           path: CustomPiOS
       
-      - name: Checkout FluiddPI Project
+      - name: Checkout VCoreOS Project
         uses: actions/checkout@v2
         with:
           repository: ${{ github.repository }}
@@ -34,15 +34,15 @@ jobs:
         run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
       - name: Copy output image
-        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img fluiddpi-raspios-lite-latest.img
+        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img vcoreos-raspios-lite-latest.img
       
       - name: Compress the image
-        run: zip fluiddpi-raspios-lite-latest.zip fluiddpi-raspios-lite-latest.img
+        run: zip vcoreos-raspios-lite-latest.zip vcoreos-raspios-lite-latest.img
 
       - uses: actions/upload-artifact@v1
         with:
-          name: fluiddpi-raspios-lite-latest.zip
-          path: fluiddpi-raspios-lite-latest.zip
+          name: vcoreos-raspios-lite-latest.zip
+          path: vcoreos-raspios-lite-latest.zip
 
       - name: Upload RaspiOS Asset
         uses: actions/upload-release-asset@v1
@@ -50,6 +50,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: fluiddpi-raspios-lite-latest.zip
-          asset_name: fluiddpi-rpi-lite-${{ github.event.release.tag_name }}.zip
+          asset_path: vcoreos-raspios-lite-latest.zip
+          asset_name: vcoreos-rpi-lite-${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip

@@ -1,5 +1,7 @@
-export DIST_NAME=FluiddPI
-export DIST_VERSION=0.4.0
-export BASE_IMAGE_ENLARGEROOT=2000
+export DIST_NAME=VCoreOS
+export DIST_VERSION=1.0.0
+export BASE_IMAGE_ENLARGEROOT=4000
 export BASE_IMAGE_RESIZEROOT=500
-export MODULES="base(network,raspicam,klipper,moonraker,fluidd,mjpgstreamer,password-for-sudo)"
+export BASE_RELEASE_IMG_NAME=vcoreos-raspios-lite-latest.img
+export BASE_IMG_NAME=vcoreos-raspios-lite-latest.img
+export MODULES="base(network,raspicam,klipper,moonraker,fluidd,mjpgstreamer,ratrig,password-for-sudo)"
