@@ -42,7 +42,7 @@ jobs:
         uses: actions/cache@v2
         with:
           key: apt-cache
-          path: ${{ github.workspace }}/repository/src/workspace/aptcache
+          path: repository/src/workspace/aptcache
 
       - name: Build Image
         run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
