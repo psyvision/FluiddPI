@@ -38,16 +38,25 @@ jobs:
       - name: Update CustomPiOS Paths
         run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
 
+      - name: APT Cache
+        uses: actions/cache@v2
+        with:
+          key: apt-cache
+          path: repository/src/workspace/aptcache
+
       - name: Build Image
         run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
       - name: Copy output image
+        if: github.event_name == 'schedule'
         run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img vcoreos-raspios-lite-latest.img
       
       - name: Compress the image
+        if: github.event_name == 'schedule'
         run: zip vcoreos-raspios-lite-latest.zip vcoreos-raspios-lite-latest.img
 
       - uses: actions/upload-artifact@v1
+        if: github.event_name == 'schedule'
         with:
           name: vcoreos-raspios-lite-latest.zip
           path: vcoreos-raspios-lite-latest.zip
