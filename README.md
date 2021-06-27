@@ -13,9 +13,9 @@ Older releases can be found [here](https://github.com/Rat-Rig/V-CoreOS/releases)
 ## How to use?
 
 1. Download the image as per above and install on an sdcard like you would any other Raspberry pi image.
-2. Optionally, if you require WiFi, configure by editing the `fluiddpi-wpa-supplicant.txt` on the root of the sd card - whilst it is still connected to your computer.
+2. Optionally, if you require WiFi, configure by editing the `vcoreos-wpa-supplicant.txt` on the root of the sd card - whilst it is still connected to your computer.
 3. Boot your Pi from the new sd card.
-4. Log into your Pi via SSH (located at `fluiddpi.local`). Default username is `pi` and password is `raspberry`.
+4. Log into your Pi via SSH (located at `vcoreos.local`). Default username is `pi` and password is `raspberry`.
 5. Best practice would have you;
     - `sudo apt-get update`
     - `sudo apt-get upgrade`
@@ -25,7 +25,7 @@ Older releases can be found [here](https://github.com/Rat-Rig/V-CoreOS/releases)
         - Optionally Change your hostname
 6. Reboot.
 
-Fluidd will be available at `http://fluiddpi.local` - and will present an error about a missing `printer.cfg` file.
+Fluidd will be available at `http://vcoreos.local` - and will present an error about a missing `printer.cfg` file.
 
 Please ensure your `printer.cfg` is configured correctly for Fluidd, see the fluidd docs [here](https://docs.fluidd.xyz). Once this is complete, you can now progress with your standard printer setup.
 
@@ -60,8 +60,8 @@ git p7zip-full python3 curl
 
 ```bash
 # To build;
-git clone https://github.com/cadriel/FluiddPI.git
-cd FluiddPI/
+git clone https://github.com/Rat-Rig/V-CoreOS.git
+cd V-CoreOS/
 make build
 ```
 
@@ -84,13 +84,15 @@ make distclean
 ### Build layout
 
 ```bash
-fluiddpi/
+v-coreos/
   /emulation - Contains dependencies for emulation testing
   /src/image - Contains our base raspbian image
   /src/workspace - Created during build, and output for compiled images
 ```
 
 ### With Thanks
+
+VCoreOS wouldn't be possible without the hard work of the FluiddPi and MainsailOS teams.
 
 FluiddPI wouldn't be possible without the hard work of Raymond Himle, Stefan Dej
 and the team behind CustomPiOS. Thank you!
