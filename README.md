@@ -31,7 +31,7 @@ Please ensure your `printer.cfg` is configured correctly for Fluidd, see the flu
 
 ## Compiling / Developing Quick Start
 
-Regular users of FluiddPI should **not** need to follow any of these steps. This is
+Regular users of VCoreOS should **not** need to follow any of these steps. This is
 for those that wish to compile their own image and / or help in the development
 of this project.
 
